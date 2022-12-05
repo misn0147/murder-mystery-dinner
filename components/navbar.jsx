@@ -1,17 +1,13 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import NavItems from "../pages/navItems.json";
 
-const Nav = () => {
-    const [navActive, setNavActive] = useState(null);
-    const [activeIdx, setActiveIdx] = useState(-1);
-
+const Navbar = () => {
     const router = useRouter();
     const gameslug = router.query.gameslug;
-
     return (
-        <div className={`${navActive ? "active" : "hidden"} nav__menu-list`}>
+        <div className="flex justify-start">
             {NavItems.map((item) => (
                 <div
                     onClick={() => {
@@ -26,9 +22,10 @@ const Nav = () => {
                                 pathname: `/${gameslug}/${item.href}`,
                             }}
                             legacyBehavior
-                            className={activeIdx == item.id ? null : "hidden"}
                         >
-                            <a className={router.pathname == `/${gameslug}/${item.href}` ? "active:bg-blue" : "bold"}>{item.title}</a>
+                            <a className="text-lg font-semibold text-gray-800 mx-5">
+                                {item.title}
+                            </a>
                         </Link>
                     ) : (
                         <Link
@@ -37,7 +34,9 @@ const Nav = () => {
                             }}
                             legacyBehavior
                         >
-                            <a className={router.pathname == `/${gameslug}` ? "active:bg-blue" : "bold"}>{item.title}</a>
+                            <a className="text-lg font-semibold text-gray-800 mx-5">
+                                {item.title}
+                            </a>
                         </Link>
                     )}
                 </div>
@@ -46,4 +45,4 @@ const Nav = () => {
     );
 };
 
-export default Nav;
+export default Navbar;

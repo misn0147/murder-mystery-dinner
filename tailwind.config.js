@@ -11,8 +11,6 @@ module.exports = {
             lg: "1440px",
         },
         fontFamily: {
-            montserrat: ["Montserrat"],
-            lato: ["Lato"],
             garamond: ["Garamond"],
         },
         colors: {
