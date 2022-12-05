@@ -1,0 +1,17 @@
+[
+    { 
+        "id": 1,
+        "title": "Home",
+        "href": null
+    },
+    {
+        "id": 2,
+        "title": "About Game",
+        "href": "about"
+    },
+    {
+        "id": 3,
+        "title": "RSVP",
+        "href": "rsvp"
+    }
+]
